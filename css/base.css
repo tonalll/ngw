@@ -1,0 +1,323 @@
+/*初始化*/
+*{margin: 0;padding: 0;list-style: none;border: none;font-size: 14px;outline: none;}
+body,html{height: 100%;width: 100%;overflow: hidden;font-family: "微软雅黑"}
+table{border: none;border-spacing: 0;border-collapse: collapse;width: 100%;line-height: 2em;text-align: center;}
+table th{border: 1px solid #ddd;}
+table td{border: 1px solid #ddd;}
+.window{width: 100%;position: absolute;height: 100%;}
+.pageLayout{height: 100%;}
+a{text-decoration: none;}
+
+/*边框颜色#aaa*/
+
+/*层级说明
+浮动模块：1-10
+遮罩背景：11-20
+dialog：21-30
+加载遮罩：31-40
+提示弹窗遮罩：41-50
+提示弹窗：51-60
+*/
+/*基础样式*/
+/*
+ 说明
+ c:color颜色相关
+ l:layout布局相关
+ */
+
+.c-trOdd{background: #eee;}
+.c-trHover{background: #FEF5CF;}
+.c-trSelect{background: #FEF5CF;}
+
+.c-alert{color: #FF4D0F!important;}
+.c-bgColor-main{background-color: #009D96;}
+
+
+.c-bgColor-0{background-color:#000!important}
+.c-bgColor-1{background-color:#111!important}
+.c-bgColor-2{background-color:#222!important}
+.c-bgColor-3{background-color:#333!important}
+.c-bgColor-4{background-color:#444!important}
+.c-bgColor-5{background-color:#555!important}
+.c-bgColor-6{background-color:#666!important}
+.c-bgColor-7{background-color:#777!important}
+.c-bgColor-8{background-color:#888!important}
+.c-bgColor-9{background-color:#999!important}
+.c-bgColor-a{background-color:#aaa!important}
+.c-bgColor-b{background-color:#bbb!important}
+.c-bgColor-c{background-color:#ccc!important}
+.c-bgColor-d{background-color:#ddd!important}
+.c-bgColor-e{background-color:#eee!important}
+.c-bgColor-f{background-color:#fff!important}
+
+.c-bdColor-0{border-color:#000}
+.c-bdColor-1{border-color:#111}
+.c-bdColor-2{border-color:#222}
+.c-bdColor-3{border-color:#333}
+.c-bdColor-4{border-color:#444}
+.c-bdColor-5{border-color:#555}
+.c-bdColor-6{border-color:#666}
+.c-bdColor-7{border-color:#777}
+.c-bdColor-8{border-color:#888}
+.c-bdColor-9{border-color:#999}
+.c-bdColor-a{border-color:#aaa}
+.c-bdColor-b{border-color:#bbb}
+.c-bdColor-c{border-color:#ccc}
+.c-bdColor-d{border-color:#ddd}
+.c-bdColor-e{border-color:#eee}
+.c-bdColor-f{border-color:#fff}
+
+.c-bAlpha-1{background:url('../img/black-alpha-1.png')!important}
+.c-bAlpha-2{background:url('../img/black-alpha-2.png')!important}
+.c-bAlpha-3{background:url('../img/black-alpha-3.png')!important}
+.c-bAlpha-4{background:url('../img/black-alpha-4.png')!important}
+.c-bAlpha-5{background:url('../img/black-alpha-5.png')!important}
+.c-bAlpha-6{background:url('../img/black-alpha-6.png')!important}
+.c-bAlpha-7{background:url('../img/black-alpha-7.png')!important}
+.c-bAlpha-8{background:url('../img/black-alpha-8.png')!important}
+.c-bAlpha-9{background:url('../img/black-alpha-9.png')!important}
+
+.c-wAlpha-1{background:url('../img/white-alpha-1.png')!important}
+.c-wAlpha-2{background:url('../img/white-alpha-2.png')!important}
+.c-wAlpha-3{background:url('../img/white-alpha-3.png')!important}
+.c-wAlpha-4{background:url('../img/white-alpha-4.png')!important}
+.c-wAlpha-5{background:url('../img/white-alpha-5.png')!important}
+.c-wAlpha-6{background:url('../img/white-alpha-6.png')!important}
+.c-wAlpha-7{background:url('../img/white-alpha-7.png')!important}
+.c-wAlpha-8{background:url('../img/white-alpha-8.png')!important}
+.c-wAlpha-9{background:url('../img/white-alpha-9.png')!important}
+
+
+.l-align-left{text-align: left;}
+.l-align-center{text-align: center;}
+.l-align-right{text-align: right;}
+
+.l-align-top{vertical-align: top}
+.l-align-middle{vertical-align: middle}
+.l-align-bottom{vertical-align: bottom}
+
+.l-float-left{float: left;}
+.l-float-right{float: right;}
+.l-float-clear{clear: both;}
+
+.l-margin-0{margin: 0!important;}
+.l-margin-left-0{margin-left: 0;}
+.l-margin-right-0{margin-right: 0;}
+.l-margin-top-0{margin-top: 0;}
+.l-margin-bottom-0{margin-bottom: 0;}
+.l-margin-0auto{margin: 0 auto;}
+
+.l-margin{margin: 0.5em;}
+.l-margin-left{margin-left: 0.5em;}
+.l-margin-right{margin-right: 0.5em;}
+.l-margin-top{margin-top: 0.5em;}
+.l-margin-bottom{margin-bottom: 0.5em;}
+
+.l-padding-0{padding: 0!important;}
+.l-padding-left-0{padding-left: 0;}
+.l-padding-right-0{padding-right: 0;}
+.l-padding-top-0{padding-top: 0;}
+.l-padding-bottom-0{padding-bottom: 0;}
+
+.l-padding{padding: 0.5em;}
+.l-padding-left{padding-left: 0.5em;}
+.l-padding-right{padding-right: 0.5em;}
+.l-padding-top{padding-top: 0.5em;}
+.l-padding-bottom{padding-bottom: 0.5em;}
+
+.l-border{border-width: 1px;border-style: solid;}
+.l-border-0{border: none!important;}
+
+.l-position-relative{position: relative;}
+.l-position-absolute{position: absolute;}
+
+.l-display-inline{display: inline-block;}
+
+.l-width-percent100{width: 100%;}
+.l-height-percent100{height: 100%;}
+
+/*布局上下居中*/
+.l-table-middle>.l-table-cell{vertical-align: middle;}
+.l-table-middle>.l-table-row>.l-table-cell{vertical-align: middle;}
+/*布局 0.5边距*/
+.l-table{display: table;width: 100%;border-spacing: 0.5em;}
+.l-table>.l-table-cell{display: table-cell;}
+/*无边距*/
+.l-table-collapse{display: table;width: 100%;border-collapse: collapse;}
+.l-table-collapse>.l-table-cell{display: table-cell;}
+/*两边无边距*/
+.l-table-collapse-both{display: table;width: 100%;border-collapse: collapse;}
+.l-table-collapse-both>.l-table-cell{display: table-cell;}
+.l-table-collapse-both>.l-table-cell>.l-table-cell-layout{margin-right: 0.5em;}
+/*列*/
+.l-table-row{display: table-row;}
+.l-table-row>.l-table-cell{display: table-cell;}
+
+.l-segment{border: 1px solid #aaa;margin: 0.5em;}
+
+/*表单布局*/
+.l-fields{display: table;width: 100%;border-spacing: 0.5em 0.1em}
+.l-fields>.l-field{display: table-cell}
+.l-fields>.l-field>label{display: block;width: 100%;padding-bottom: 0.1em;}
+form{}
+
+/*普通input*/
+.l-fields>.l-field>input{display: block;border: 1px solid #aaa;padding: 0.2em 0;text-indent: 0.5em;width: 100%;}
+.l-fields>.l-field>input:focus{border-color: #009D96;}
+
+
+
+/*分割线*/
+.l-divider{height: 1px;background: #999;margin: 0.5em;}
+.l-divider-0{height: 1px;background: #999;margin: 0}
+.l-divider-005{height: 1px;background: #999;margin:0 0.5em;}
+.l-divider-050{height: 1px;background: #999;margin: 0.5em 0;}
+
+
+
+
+
+
+
+
+
+/*******************组件*******************/
+
+/*按钮
+m:model组件 提交按钮
+*/
+.m-button{display: inline-block;cursor: pointer;background: #009D96;margin: 0.3em;padding: 0.2em 1em;color: #fff;text-align: center;}
+.m-button:hover{color: #fff!important;background: #009D96!important;}
+.m-button-hover{color: #fff!important;background: #009D96!important;}
+.m-button-cancel{display: inline-block;cursor: pointer;background: #ccc;margin: 0.3em;padding: 0.3em 1em;color: #fff;text-align: center;}
+.m-button-cancel:hover{color: #fff!important;background: #D8522C!important;}
+.m-button-cancel-hover{color: #fff!important;background: #D8522C!important;}
+.m-reset{}
+.m-submit{}
+.m-button-alpha{background:url('../img/white-alpha-1.png')!important;display: inline-block;cursor: pointer;color: #fff;margin: 0.3em;padding: 0.3em 1em;color: #fff;text-align: center;}
+.m-button-alpha:hover{background:url('../img/white-alpha-9.png')!important;color: #000!important;}
+/*按钮组*/
+.m-button-list{display: inline-block;position: relative;background: #fff;height: 2.3em;}
+.m-button-list ul{display: inline-block;background: #fff;}
+.m-button-list:hover ul{position: absolute;left: 0;top: 0;z-index: 1}
+.m-button-list ul li{display: inline-block;cursor: pointer;padding: 0.2em 0;text-indent: 5px;text-align: left;border: 1px solid #aaa;border-top: none;}
+.m-button-list .m-button-first{background:url("../img/select-ico.png") no-repeat scroll right center;border: 1px solid #aaa;}
+.m-button-list:hover ul li,.m-button-list:hover .m-button-first{border-color: #009D96;}
+.m-button-list ul li:hover{background-color: #009D96;color: #fff;}
+
+
+/*输入框*/
+.m-input{display: inline-block;border: 1px solid #aaa;padding: 0.2em 0;text-indent: 0.5em;width: 100px;}
+
+
+/*下拉菜单*/
+.m-select-div{position: relative;width: 100%;height: 2.3em;}
+.m-select-ul{border:1px solid #aaa ;position: relative;position: absolute;top: 0px;left: 0px;width: 100%;}
+.m-select-ul li{border-top:1px solid #aaa ;padding: 0.2em 0px;text-indent: 0.5em;cursor: pointer;display: block;background-color: #fff; list-style-type: none;color: #000;}
+.m-select-ul-li-hover{background-color: #aaa!important;color: #fff!important}
+.m-the-select-li{background: url('../img/select-ico.png') center right no-repeat;border-top: none!important;}
+
+/*单选按钮*/ /*多选按钮*/
+.m-onoff{height: 1em;width: 3em;display: inline-block;cursor: pointer;float: left;}
+.m-onoff-on{background: #009D96;border: 1px solid #009D96;}
+.m-onoff-off{background: #aaa;border: 1px solid #aaa;}
+.m-onoff-on .m-onoff-block{background: #fff;height: 1em;width: 1.5em;float: right;background: #fff;display: inline-block;}
+.m-onoff-off .m-onoff-block{background: #fff;height: 1em;width: 1.5em;float: left;background: #fff;display: inline-block;}
+.m-onoff-text{line-height: 1em;height: 1em;display: inline-block;float: left;margin-left: 0.5em;}
+
+/*弹窗 z-index：21-30*/
+.m-dialog{position: absolute;z-index: 21;width: 500px;height: 500px;top: 100px;left: 100px;background: #fff;}
+
+
+.m-dialog-head{}
+.m-dialog-title{}
+
+.m-dialog-control{display: inline-block; background:url("../img/m-dialog-control.png") top left no-repeat;cursor: pointer; }
+.m-dialog-reset{ width:16px; height:12px; background-position:-10px -10px; }
+.m-dialog-max{ width:16px; height:12px; background-position:-10px -32px; }
+.m-dialog-close{ width:16px; height:12px; background-position:-10px -54px; }
+.m-dialog-resize{ width:9px; height:9px; background-position:-10px -76px; position: absolute;bottom: 2px;right: 2px;cursor: nw-resize;}
+
+.m-dialog-body{}
+
+.m-dialog-foot{}
+.m-dialog-ok{}
+.m-dialog-cancle{}
+
+.m-lookup{background: url(../img/m-lookup.png) center right no-repeat;}
+.m-date{background: url(../img/m-date.png) center right no-repeat;}
+/*唯一滚动条组件*/
+.m-scrollbar{overflow: auto;}
+
+.m-title{font-size: 1.2em;padding: 0.5em;}
+
+
+
+
+
+
+/*ajax动画*/
+#m-ajax-mask{width: 100%;height: 100%;background: #fff;display: none;position: absolute;top:0px;left: 0px;z-index: 31;}
+#m-ajax-animate{width: 100px;height: 100px;background: url('../img/ajax-animate.gif') center center no-repeat;margin: 0 auto;position: relative;}
+#m-dialog-mask{width: 100%;height: 100%;background: #000;display: none;position: absolute;top:0px;left: 0px;z-index: 11;}
+#m-alert-mask{width: 100%;height: 100%;background: #000;display: none;position: absolute;top:0px;left: 0px;z-index: 41;}
+
+
+
+/*弹窗提示信息*/
+.m-alert{position: fixed;_position: absolute;width: 300px;border: 2px solid #009D96;z-index: 51;top: 0;left: 0;background: #fff;}
+.m-alert-con{margin: 10px 10px 45px;border-bottom: 1px solid #009D96;padding-bottom: 5px;padding-top: 10px;}
+.m-alert-close{position: absolute;bottom: 10px;right: 10px;color: #009D96;border: 1px solid #009D96;background: #fff;cursor: pointer;padding: 5px 10px;}
+.m-alert-close-hover{background: #009D96;color: #fff;}
+.m-alert-cancle{position: absolute;bottom: 10px;right: 100px;color: #009D96;border: 1px solid #009D96;background: #fff;cursor: pointer;padding: 5px 10px;}
+.m-alert-cancle-hover{background: #009D96;color: #fff;}
+
+
+
+/*分页*/
+.m-pageBar{font-size: 0;margin: 0.5em;}
+.m-pageBar .m-button{margin-left: 0!important;margin-right: 0!important;background-color: #aaa;}
+.pageInput{margin-left: 0.5em;border: 1px #aaa solid;display: inline-block;}
+.pageInput .m-button{margin: 0;}
+.pageInput input{width: 2em;padding: 0 0.5em;}
+.pageLength{display: inline-block;width: 4em;height: 1.7em;}
+.m-pageBar .m-pageButton-hover{background: #009D96;}
+/*text*/
+.m-text{display: inline-block;margin: 0 0.5em;}
+
+/*表格*/
+.m-grid{}
+.m-grid-head{}
+.m-grid-head table{background: #009D96;color: #fff;}
+.m-grid-head table th{border-color: #008079;}
+.m-gridBar{margin:0;border: none;background: #eee;font-size: 0}
+.m-gridBar .m-button{font-size: 12px;margin-left: 0;}
+
+.m-grid-body{}
+.m-grid-foot{}
+
+/*tab组件*/
+.m-tab{}
+.m-tab-bar{display: table;width: 100%;border-spacing:0.5em;}
+.m-tab-button{display: table-cell;background: #aaa;text-align: center;vertical-align: middle;cursor: pointer;color: #fff;padding: 0.5em;}
+.m-tab-button:hover{background: #009D96 ;color: #fff;}
+.m-tab-button-hover{background: #009D96 ;color: #fff;}
+.m-tab-con{}
+
+/*验证相关*/
+.validError{border: 1px solid #FF0000!important;}
+.readonly{background: #ddd;}
+
+/*dropdownSeurch下拉搜索组件*/
+.dropdownSeurch{}
+.dropdownSeurchLayout{width: 100px;height: 300px;border: 1px solid #ddd;position: absolute;background: #fff;overflow: auto;}
+.dropdownSeurchLayout>*{padding: 5px 0px 5px 5px;}
+.dropdownSeurchLayout>*:hover{background: #009D96;color: #fff;cursor: pointer;}
+
+.dropdownTree{}
+.dropdownTreeLayout{width: 100px;height: 300px;border: 1px solid #ddd;position: absolute;background: #fff;overflow: auto;}
+
+
+
+
+
