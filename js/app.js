@@ -12,7 +12,6 @@ ngw.controller('mycontroller', ['$scope',
         }
     }])
 
-
 //监听窗口变化
 ngw.directive('resize', function ($window) {
     return function (scope, element) {
