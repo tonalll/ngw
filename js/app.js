@@ -10,7 +10,7 @@ ngw.controller('mycontroller', ['$scope',
         $scope.move = function () {
             console.info('move');
         }
-    }])
+    }]);
 
 //监听窗口变化
 ngw.directive('resize', function ($window) {
@@ -42,4 +42,12 @@ ngw.directive('resize', function ($window) {
         });
 
     }
-})
+});
+
+//自定义指令
+ngw.directive('tagname',function(){
+    return{
+        restrict:'AECM',
+        template:'<div>自定义的内容</div>',
+    }
+});
