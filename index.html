@@ -95,15 +95,25 @@
             </div>
         </div>
     </div>
-<!--    11月24日-->
-    <div tagname>123</div>
-<!--    11月25日-->
-<!--    要把Accordion.html文件搞清楚 一个Accordion插件-->
-    
     <div resize>window.height: {{windowHeight}}
     <br />window.width: {{windowWidth}}
-    <br />
 </div>
+<!--    11月24日-->
+    <div tagname>123</div>
+    <div class="l-divider"></div>
+<!--    11月25日-->
+<!--    要把Accordion.html文件搞清楚 一个Accordion插件-->
+    <div accordion="" class="m-accordion">
+        <div accordionunit class="c-unit" ng-repeat='data in accordionData' title='data.title'>
+            {{data.text}}
+        </div>
+    </div>
+
+  <!--   <accordion>
+          <expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
+              {{expander.text}}
+          </expander>
+      </accordion> -->
 </body>
 
 </html>

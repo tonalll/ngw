@@ -1,1 +1,41 @@
-123
+AECM
+A attribute属性：当做属性来使用
+E element元素：当做标签元素来使用
+C class类：当做CSS样式来使用
+M comments注释：当做注释使用（这种方式在1.2版本下亲测不可用！）
+
+controller先运行，link后运行，link和compile不兼容。compile改变dom,link事件的触发和绑定
+
+$scope.$apply()中，它会自动触发$rootScope.$digest()，从而让watchers被触发用以更新view。
+自定义指令名称写法 html里面aaa-bbb js里面aaaBbb
+
+
+scope: {
+    name: '=',
+    age: '=',
+    sex: '@',
+    say: '&'
+}
+
+假设我们的hml代码如下
+
+<div my-directive name="myName" age="myAge" sex="male" say="say()"></div>
+
+对应的controller部分代码
+
+function Controller($scope) {
+  $scope.name = 'Pajjket';
+  $scope.age = 99;
+  $scope.sex = '我是男的';
+  $scope.say = function() {
+    alert('Hello，我是弹出消息');
+  };
+}
+
+那这几种修饰符的含义又是什么呢，他们如何关联起来的
+
+”＝“：指令中的属性取值为controller中对应$scope上属性的取值，可用于双向数据的绑定
+
+”@“：指令中的取值为html中的字面量/直接量；建立一个local scope property到DOM属性的绑定。因为属性值总是String类型，所以这个值总是返回一个字符串。如果没有通过@attr指定属性名称，那么本地名称将与DOM属性的名称一直。例如<widget my-attr=”hello {{name}}”>，widget的scope定义为：{localName:’@myAttr’}。那么，widget scope property的localName会映射出”hello {{name}}"转换后的真实值。name属性值改变后，widget scope的localName属性也会相应地改变（仅仅单向，与下面的”=”不同）。name属性是在父scope读取的（不是组件scope）
+
+”&“：指令中的取值为Contoller中对应$scope上的属性，但是这属性必须为一个函数回调

@@ -183,9 +183,17 @@ form{}
 
 /*******************组件*******************/
 
+/*后代选择器共用类名*/
+.c-unit{}
+.c-title{}
+.c-con{}
 /*按钮
 m:model组件 提交按钮
 */
+.m-accordion{margin: 0 5em;}
+.m-accordion .c-unit{margin-top: 0.1em;border: 1px solid #333;}
+.m-accordion .c-title{cursor: pointer;color: #fff;background: #333;}
+
 .m-button{display: inline-block;cursor: pointer;background: #009D96;margin: 0.3em;padding: 0.2em 1em;color: #fff;text-align: center;}
 .m-button:hover{color: #fff!important;background: #009D96!important;}
 .m-button-hover{color: #fff!important;background: #009D96!important;}
