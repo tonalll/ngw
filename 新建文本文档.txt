@@ -7,7 +7,7 @@ M comments注释：当做注释使用（这种方式在1.2版本下亲测不可�
 controller先运行，link后运行，link和compile不兼容。compile改变dom,link事件的触发和绑定
 
 $scope.$apply()中，它会自动触发$rootScope.$digest()，从而让watchers被触发用以更新view。
-自定义指令名称写法 html里面aaa-bbb js里面aaaBbb
+自定义指令名称写法 html里面aaa-bbb aaa-bbb-ccc js里面aaaBbb aaaBbbCcc
 
 
 scope: {
@@ -39,3 +39,16 @@ function Controller($scope) {
 ”@“：指令中的取值为html中的字面量/直接量；建立一个local scope property到DOM属性的绑定。因为属性值总是String类型，所以这个值总是返回一个字符串。如果没有通过@attr指定属性名称，那么本地名称将与DOM属性的名称一直。例如<widget my-attr=”hello {{name}}”>，widget的scope定义为：{localName:’@myAttr’}。那么，widget scope property的localName会映射出”hello {{name}}"转换后的真实值。name属性值改变后，widget scope的localName属性也会相应地改变（仅仅单向，与下面的”=”不同）。name属性是在父scope读取的（不是组件scope）
 
 ”&“：指令中的取值为Contoller中对应$scope上的属性，但是这属性必须为一个函数回调
+
+
+    restrict:指令在dom中的声明形式 E（元素）A（属性）C（类名）M（注释）
+    priority优先级：一个元素上存在两个指令，来决定那个指令被优先执行
+    terminal:true或false，告诉angular是否停止执行比高优先级指令低的指令
+    template：两种形式，一种HTML文本；一个可以接受两个参数的函数，tElemetn和tAttrs，并返回一个代表模板的字符串。模板字符串必须存在一个根DOM元素
+    templateUrl:两种形式，一种代表外部HTML文件路径的字符串；一个可以接受两个参数的函数，参数为tElement和tAttrs，并返回一个外部HTML文件路径的字符串
+    replace:模板会被当做子元素插入到调用指令的DOM元素中还是替换该DOM元素
+    scope：默认是false，true是会从父作用域继承并创建一个新的作用域对象,scope设置为一个空对像{},指令的模板就无法访问外部作用域了，词为隔离作用域，有三种方法可以使隔离作用域内的数据同指令外的作用域进行数据绑定，1，@（or @attr）内部可以使用外部作用域变量；2，=（or =attr）双向绑定；3，&（or &attr）传递引用
+    controller：字符或函数，当为字符串时，会以字符串的名字来查找注册在应用中的控制器的构造函数。我们可以将任意的可以被注入的Angularjs服务传递给控制器，在控制器中也有一些特殊的服务可以被注入到指令中，如：controller：function($scope, $element, $attrs $transclude)。$transclude 嵌入链接函数会与对应的嵌入作用域进行绑定，transclude链接函数是实际被执行的用来克隆元素和操作DOM的函数。指令的控制器和link函数可以进行互换，控制器主要用来提供可以在指令间复用的行为，但链接函数只能在当前指令中定义行为，且无法在指令间复用。
+    controllerAs：字符串，设置控制器的别名
+    require：参数可以被设置为字符串或数组,字符串代表另外一个指令的名字，require 会将控制器注入到其值所指定的指令中,并作为当前指令的链接函数的第四个参数。require 参数的值可以用下面的前缀进行修饰,这会改变查找控制器时的行为: ？ 如果在当前指令中没有找到所需要的控制器,会将 null 作为传给 link 函数的第四个参数。如果添加了 ^ 前缀,指令会在上游的指令链中查找 require 参数所指定的控制器。 ？^ 将前面两个选项的行为组合起来,我们可选择地加载需要的指令并在父指令链中进行查找。如果没有前缀,指令将会在自身所提供的控制器中进行查找，如果没有找到任何控制器就抛出一个错误。
+    compile (对象或函数)：compile 选项可以返回一个对象或函数。如果设置了 compile 函数,说明我们希望在指令和实时数据被放到DOM中之前进行DOM操作,在这个函数中进行诸如添加和删除节点等DOM操作是安全的。本质上,当我们设置了 link 选项,实际上是创建了一个 postLink() 链接函数,以便 compile() 函数可以定义链接函数。

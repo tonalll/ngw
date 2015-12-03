@@ -10,6 +10,7 @@
     <script src="js/angular.js"></script>
 <!--    <script src="js/angular-1.0.0.js"></script>-->
     <script src="js/app.js"></script>
+    <script src="js/directives.js"></script>
 </head>
 
 <body ng-controller='mycontroller' ng-mousemove='move()' class="c-bgColor-e">
@@ -103,7 +104,7 @@
     <div class="l-divider"></div>
 <!--    11月25日-->
 <!--    要把Accordion.html文件搞清楚 一个Accordion插件-->
-    <div accordion="" class="m-accordion">
+    <div accordion="" default=2 class="m-accordion">
         <div accordionunit class="c-unit" ng-repeat='data in accordionData' title='data.title'>
             {{data.text}}
         </div>
