@@ -9,13 +9,13 @@
 #start{height: 4em;width: 4em;position: relative;}
 .logo{height: 4em;width: 4em;background: url(../img/logo.png) center center no-repeat;cursor: pointer;}
 
-#menu{position: absolute;top: 4em;z-index: 8;width: 40em;display: none;background-color: #007973;}
+#menu{position: absolute;top: 4em;z-index: 8;width: 40em;background-color: #007973;}
 #menu .list{margin-bottom: 0.3em;line-height: 2em;cursor: pointer;padding: 0.5em;position: relative;}
 #menu .ico{background-color: #000!important;width: 2em;}
 #menu .title{padding-left: 0.5em;color: #fff;}
 #menu .next{color: #fff;width: 2em;text-indent: 50px;background: url(../img/ico-right-line.png) center center no-repeat;}
 
-#menu .ad{width: 20em;height: 10em;background: #ddd;margin-left: 0.5em;}
+#menu .ad{width: 100%;height: 10em;background: #ddd;margin-bottom: 0.5em;}
 
 .submenu{position: absolute;top: 0;left: 15em;background-color: #005551;}
 
@@ -129,6 +129,9 @@
 #menu .ico-gzzx{background: url(../img/menu/small/gzzx.png) center center no-repeat}
 #menu .ico-sflb{background: url(../img/menu/small/sflb.png) center center no-repeat}
 #menu .ico-ztgl{background: url(../img/menu/small/ztgl.png) center center no-repeat}
+#menu .ico-tongyong{background: url(../img/menu/small/tongyong.png) center center no-repeat}
+#menu .ico-szxm{background: url(../img/menu/small/szxm.png) center center no-repeat}
+#menu .ico-zcgl{background: url(../img/menu/small/zcgl.png) center center no-repeat}
 /*头像*/
 #menu .head{display: none;}
 
@@ -168,6 +171,9 @@
 #taskBar .ico-gzzx{background: url(../img/menu/gzzx.png) center center no-repeat}
 #taskBar .ico-sflb{background: url(../img/menu/sflb.png) center center no-repeat}
 #taskBar .ico-ztgl{background: url(../img/menu/ztgl.png) center center no-repeat}
+#taskBar .ico-tongyong{background: url(../img/menu/tongyong.png) center center no-repeat}
+#taskBar .ico-szxm{background: url(../img/menu/szxm.png) center center no-repeat}
+#taskBar .ico-zcgl{background: url(../img/menu/zcgl.png) center center no-repeat}
 
 
 /*ztree相关*/
@@ -221,30 +227,30 @@
 
 .ji-table-news{max-width: 1000px; margin: 0 auto;}
 .top-table-ft{ text-align: right; padding-right:2.5em;}
-.table-list-acc{ height: 315px; width: 100%; border-spacing:2em 0.5em;}
-.acc-table-one{background: #55c2c2; cursor: pointer;position: relative; width: 470px;}
+.table-list-acc{ height: 315px; width: 100%; /*border-spacing:2em 0.5em;*/}
+.acc-table-one{background: #009D96 ; cursor: pointer;position: relative; width: 470px;}
 .cont-mess-right{ position: absolute; right: 0; top: 0; width: 87px;height: 93px; background: #ccc;}
-.cont-mess-cent{ height: 105px;left: 35px; position: absolute;top: 100px; width: 105px; background:url('../img/ico_acc_imgbg.png') no-repeat;}
+.cont-mess-cent{ height: 105px;left: 50%; margin-left: -52px; position: absolute;top: 70px; width: 105px; background:url('../img/ico_acc_imgbg.png') no-repeat;}
 .cont-mess-ft .cont-ft-list1,.cont-mess-ft .cont-ft-list3{ font-size: 18px;line-height: 28px;}
 .cont-mess-ft .cont-ft-list2{ font-size: 54px;line-height: 114px;}
-.cont-mess-ft{ left: 155px; position:absolute;top: 90px; width: 290px; color: #fff;}
-.acc-table-two{width: 230px; background: #fff;}
+.cont-mess-ft{ left: 50%; margin-left: -108px; position:absolute;top: 160px; width: 216px; color: #fff;}
+.acc-table-two{width: 245px; background:#D7E9EA;}
 .table-cell-list{ text-align:center;}
-.acc-table-two .cell-list1{ height: 40px; line-height: 40px; position: relative; background: #55c2c2 ; color: #fff; font-size: 16px;}
-.acc-table-two .cell-list1 .but-on{ cursor: pointer;  border-radius: 3px; height: 25px; line-height: 25px; position: absolute;  right: 10px; top: 8px; width: 50px; background: #40A4A4; font-size: 12px; }
+.acc-table-two .cell-list1{ height: 40px; line-height: 40px; position: relative; background: #009D96 ; color: #fff; font-size: 16px;}
+.acc-table-two .cell-list1 .but-on{ cursor: pointer;  border-radius: 3px; height: 25px; line-height: 25px; position: absolute;  right: 10px; top: 8px; width: 50px; background: #49AEAE ; font-size: 12px; }
 .cell-list2{height: 40px; font-size: 16px; line-height: 40px; position: relative;}
-.cell-list2 a{ display: inline-block; margin: 0 5px; font-weight: 600; font-size: 16px; color: #55c2c2;}
-.cell-list2 a.left-btn{width:0;height:0; border-width:10px; border-style:solid;  border-color:transparent #55c2c2 transparent transparent;}
-.cell-list2 a.right-btn{width:0;height:0; border-width:10px; border-style:solid;  border-color:transparent transparent transparent #55c2c2;}
-.cell-list3{ background: #9DD5D5 ; height: 40px; line-height: 40px; font-size: 16px;color: #fff;}
+.cell-list2 a{ display: inline-block;font-weight: 600; font-size: 16px; color: #55c2c2;}
+.cell-list2 a.left-btn{width:17px;height:20px; background: url('../img/l-r-jiantou.png') 0 0 no-repeat;}
+.cell-list2 a.right-btn{width:17px;height:20px;background: url('../img/l-r-jiantou.png') -41px 0 no-repeat;}
+.cell-list3{ background: #49AEAE ; height: 40px; line-height: 40px; font-size: 16px;color: #fff;}
 .cell-list3 span{ display: inline-block; width: 49%; text-align: center;border-right:1px solid #eee; }
 .cell-list2 a.left-btn,.cell-list2 a.right-btn{ position: relative;;top: 3px;}
 .cell-list4{ height: 80px; line-height: 80px; font-size: 16px;}
 .cell-list4 span{ display: inline-block; width: 49%; text-align: center;font-size: 16px; border-right:1px solid #eee; }
 .cell-list4 span.bd-span-none{border: none;}
 .cell-list3 span.bd-span-none{border: none;}
-.ico-bg-pos{ display: none; position: absolute; left: 0;top: 0; bottom: 0; right: 0; background: #000; opacity: 0.7;}
-.ico-bg-pos span{ display:block; color: #54c9ca; font-size: 24px; text-align: center; font-weight: bold; text-align: center; margin-top: 140px;}
+.ico-bg-pos{ height: 320px; position: absolute; left: 0;top: 0; bottom: 0; right: 0;}
+.ico-bg-pos span{display: none;}
 .add_index{z-index: 99;}
 .info_one{ position: absolute; left: 50%; top: 50%; height: 170px; width: 320px; margin-left:-160px; margin-top: -85px; background: #fff; }
 .info_top{ overflow: hidden; height:30px; line-height:30px; padding: 0 10px; background: #40A4A4 ;}
@@ -257,13 +263,17 @@
 .btn-list-acc a{ display: inline-block; margin-right: 10px; background: #40A4A4; color: #fff; font-size: 14px; width: 50px; height: 30px; line-height: 30px; text-align: center;}
 .btn-list-acc a:hover{background: #55c2c2 ;}
 .ico_down_arrow{position: absolute; width: 20px; height: 15px; top: -6px; left: 50%; margin-left: -10px; background: url('../img/ico_down_arrow.png') center center no-repeat;}
+.right-table-b{ display: table; width: 100%; background:#00B6AD; border-spacing: 0.5em;}
+.right-table-cell{display: table-cell;}
+
 /*查凭证*/
 .lookVoucher
 .lookVoucher .head{}
 .lookVoucher .head .m-button{margin: 0;}
 .lookVoucher-month{cursor: pointer;text-align: center;}
 .lookVoucher-month:hover{background: #009D96;color: #fff;}
-.lookVoucher-month.select{background: #009D96;color: #fff;}
+.lookVoucher-month.select{background: #009D96!important;color: #fff;}
+.lookVoucher-month.select-waitting{/*border-bottom: 2px solid #009D96;*/background: #95E1DF;}
 .lookVoucher .body{margin-top: 1em;}
 .lookVoucher .body .head{margin-bottom: 1em;}
 /*.lookVoucher .body .unit:hover{border: 2px solid #009D96;}*/
@@ -278,5 +288,14 @@
 .lookVoucher .body .unit{margin-bottom: 0.5em;}
 .lookVoucher .body .head .l-table-cell{text-align: center;background: #009D96;color: #fff;border: 1px solid #008079;padding:0.5em 0}
 
-.nob_list{ width: 20px; border: none; outline: none; text-align: center;font-size: 16px; color: #55c2c2; font-weight: bold;}
+.nob_list{ width: 25px; border: none; outline: none; margin: 0 2px;background: #55C2C2; text-align: center;font-size: 16px; color: #fff; font-weight: bold;}
 .color_yue{font-size: 16px; color: #55c2c2; font-weight: bold;}
+
+/*头部导航菜单修改*/
+
+.list-btn-off{ display: none; position: absolute; left: -50%; margin-left: -26px; top: 32px; width: 240px; background: #007e78; z-index: 999;}
+.list-pos-one{ display: inline-block; position: relative;}
+.list-btn-off a{ display: block; text-align: center; padding: 5px 0; color: #fff;}
+.list-btn-off a:hover{ background: #22aaa4 ;}
+.list-pos-one .list-block{display: block;}
+

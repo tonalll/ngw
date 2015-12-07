@@ -1,7 +1,7 @@
 angular.module('docsTabsExample', [])
     .directive('myTabs', function() {
         return {
-            restrict: 'E',
+            restrict: 'AE',
             transclude: true,
             scope: {},
             controller: function($scope) {
@@ -26,7 +26,7 @@ angular.module('docsTabsExample', [])
     .directive('myPane', function() {
         return {
             require: '^myTabs',
-            restrict: 'E',
+            restrict: 'AE',
             transclude: true,
             scope: {
                 title: '@'

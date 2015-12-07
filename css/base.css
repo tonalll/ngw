@@ -3,8 +3,8 @@
 body,html{height: 100%;width: 100%;overflow: hidden;font-family: "微软雅黑"}
 table{border: none;border-spacing: 0;border-collapse: collapse;width: 100%;line-height: 2em;text-align: center;}
 table th{border: 1px solid #ddd;}
-table td{border: 1px solid #ddd;}
-.window{width: 100%;position: absolute;height: 100%;}
+table td{border: 1px solid #ddd;word-break:break-all;}
+.window{width: 100%;position: absolute;height: 100%;overflow: auto;}
 .pageLayout{height: 100%;}
 a{text-decoration: none;}
 
@@ -32,6 +32,7 @@ dialog：21-30
 .c-alert{color: #FF4D0F!important;}
 .c-bgColor-main{background-color: #009D96;}
 
+.c-color-red{color: #F00;}
 
 .c-bgColor-0{background-color:#000!important}
 .c-bgColor-1{background-color:#111!important}
@@ -183,17 +184,9 @@ form{}
 
 /*******************组件*******************/
 
-/*后代选择器共用类名*/
-.c-unit{}
-.c-title{}
-.c-con{}
 /*按钮
 m:model组件 提交按钮
 */
-.m-accordion{margin: 0 5em;}
-.m-accordion .c-unit{margin-top: 0.1em;border: 1px solid #333;}
-.m-accordion .c-title{cursor: pointer;color: #fff;background: #333;}
-
 .m-button{display: inline-block;cursor: pointer;background: #009D96;margin: 0.3em;padding: 0.2em 1em;color: #fff;text-align: center;}
 .m-button:hover{color: #fff!important;background: #009D96!important;}
 .m-button-hover{color: #fff!important;background: #009D96!important;}
@@ -210,6 +203,7 @@ m:model组件 提交按钮
 .m-button-list:hover ul{position: absolute;left: 0;top: 0;z-index: 1}
 .m-button-list ul li{display: inline-block;cursor: pointer;padding: 0.2em 0;text-indent: 5px;text-align: left;border: 1px solid #aaa;border-top: none;}
 .m-button-list .m-button-first{background:url("../img/select-ico.png") no-repeat scroll right center;border: 1px solid #aaa;}
+.m-button-list:hover ul{background: #CCF0EF;}
 .m-button-list:hover ul li,.m-button-list:hover .m-button-first{border-color: #009D96;}
 .m-button-list ul li:hover{background-color: #009D96;color: #fff;}
 
@@ -314,17 +308,21 @@ m:model组件 提交按钮
 
 /*验证相关*/
 .validError{border: 1px solid #FF0000!important;}
-.readonly{background: #ddd;}
+.readonly{background-color: #ddd;}
 
 /*dropdownSeurch下拉搜索组件*/
 .dropdownSeurch{}
-.dropdownSeurchLayout{width: 100px;height: 300px;border: 1px solid #ddd;position: absolute;background: #fff;overflow: auto;}
+.dropdownSeurchLayout{width: 100px;height: 300px;z-index: 2;border: 1px solid #ddd;position: absolute;background: #fff;overflow: auto;}
 .dropdownSeurchLayout>*{padding: 5px 0px 5px 5px;}
 .dropdownSeurchLayout>*:hover{background: #009D96;color: #fff;cursor: pointer;}
 
 .dropdownTree{}
 .dropdownTreeLayout{width: 100px;height: 300px;border: 1px solid #ddd;position: absolute;background: #fff;overflow: auto;}
 
+/*记账table数据上传*/
+.tabel-val tr td{ height: 100%;}
+.nob-values{ display: none; width: 100%; height:2.5em; background: #ccc;}
+.nob-val{width: 100%; display: block;}
 
 
 

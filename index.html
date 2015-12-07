@@ -6,20 +6,27 @@
     <title></title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
-   <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/angular.js"></script>
-<!--    <script src="js/angular-1.0.0.js"></script>-->
+    <!--    <script src="js/angular-1.0.0.js"></script>-->
     <script src="js/app.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/controller.js"></script>
 </head>
+<script>
+    var config = {
+        menuUrl: 'ajax/menu.json'
+    }
+</script>
 
-<body ng-controller='mycontroller' ng-mousemove='move()' class="c-bgColor-e">
-<!--<body class="c-bgColor-e">-->
+<body class="c-bgColor-e">
+    <!--<body class="c-bgColor-e">-->
+
     <div id="head" class="c-bgColor-main">
         <div class="l-table-collapse l-table-middle">
             <div class="l-table-cell" id="start">
                 <div class="logo"></div>
-                <div id="menu" class="c-bAlpha-9">
+                <div id="menu" ng-controller='menu' class="c-bAlpha-9">
                     <div class="l-segment l-border-0">
                         <div class="l-table l-table-middle">
                             <div class="l-table-cell">头像</div>
@@ -28,61 +35,10 @@
                         <div class="l-table l-table-collapse">
                             <div class="l-table-cell l-align-top" style="width: 15em;">
 
-                                <div class="l-table l-table-collapse list">
-                                    <div class="l-table-cell ico"></div>
-                                    <div class="l-table-cell title">演示例子</div>
-                                    <div class="l-table-cell next">></div>
-                                    <div class="l-table-cell l-align-top submenu c-bAlpha-9" style="width: 15em;">
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"buju","url":"./ajax/buju.html","title":"布局","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">布局</div>
-                                        </div>
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"formzujian","url":"./ajax/formzujian.html","title":"form组件","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">form组件</div>
-                                        </div>
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"windowFenYe","url":"./ajax/windowFenYe.html","title":"window分页","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">window分页</div>
-                                        </div>
-
-                                        <div class="l-table l-table-collapse list" target='dialog' data-options='{"title":"dialog分页","url":"ajax/dialogFenye.html"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">dialog分页</div>
-                                        </div>
-
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"ajaxSubmit","url":"./ajax/ajaxSubmit.html","title":"普通form提交","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">普通form提交</div>
-                                        </div>
-
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"ajaxSubmit","url":"./ajax/tab.html","title":"tab示例","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">tab示例</div>
-                                        </div>
-
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"ajaxSubmit","url":"./ajax/moreimgupload.html","title":"多个图片上传","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">多个图片上传</div>
-                                        </div>
-
-                                        <div class="l-table l-table-collapse list" desk-option='{"id":"ajaxSubmit","url":"./ajax/ueditor.html","title":"ueditor编译器","ico":"dom1"}'>
-                                            <div class="l-table-cell ico"></div>
-                                            <div class="l-table-cell title">ueditor编译器</div>
-                                        </div>
-
-
-
-                                    </div>
-
+                                <div class="l-table l-table-collapse list" ng-repeat='(key,value) in menu track by $index'>
+                                    <div class="l-table-cell ico {{value.ico}}"></div>
+                                    <div class="l-table-cell title">{{key}}</div>
                                 </div>
-
-                                <div class="l-table l-table-collapse list" desk-option='{"id":"123","url":"./ajax/domwindow.html","title":"标题","ico":"dom1"}'>
-                                    <div class="l-table-cell ico menuIco dom1"></div>
-                                    <div class="l-table-cell title">一级菜单名称菜单</div>
-                                    <div class="l-table-cell next">></div>
-                                </div>
-
                             </div>
                             <div class="l-table-cell">
                                 <div class="ad"></div>
@@ -96,21 +52,24 @@
             </div>
         </div>
     </div>
-    <div resize>window.height: {{windowHeight}}
-    <br />window.width: {{windowWidth}}
-</div>
-<!--    11月24日-->
-    <div tagname>123</div>
-    <div class="l-divider"></div>
-<!--    11月25日-->
-<!--    要把Accordion.html文件搞清楚 一个Accordion插件-->
-    <div accordion="" default=2 class="m-accordion">
-        <div accordionunit class="c-unit" ng-repeat='data in accordionData' title='data.title'>
-            {{data.text}}
+    <div ng-controller='mycontroller' ng-mousemove='move()'>
+        <div resize>
+            window.height: {{windowHeight}}
+            <br />window.width: {{windowWidth}}
+        </div>
+        <!--    11月24日-->
+        <div tagname>123</div>
+        <div class="l-divider"></div>
+        <!--    11月25日-->
+        <!--    要把Accordion.html文件搞清楚 一个Accordion插件-->
+        <div accordion="" default=2 class="m-accordion">
+            <div accordionunit class="c-unit" ng-repeat='data in accordionData' title='data.title'>
+                {{data.text}}
+            </div>
         </div>
     </div>
 
-  <!--   <accordion>
+    <!--   <accordion>
           <expander class='expander' ng-repeat='expander in expanders' expander-title='expander.title'>
               {{expander.text}}
           </expander>
